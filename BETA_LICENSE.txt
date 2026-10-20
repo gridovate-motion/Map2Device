@@ -1,0 +1,28 @@
+OUTDOOR MAP CONVERTER - PUBLIC BETA EVALUATION LICENSE
+Version 0.29 Public Beta RC1
+
+Copyright (c) 2026 Gridovate Motion. All rights reserved.
+
+1. Beta use
+You may install and use this Public Beta free of charge for personal evaluation and compatibility testing until 31 January 2027.
+
+2. No transfer of ownership
+The software is licensed, not sold. No ownership rights in the software or source code are transferred.
+
+3. Redistribution
+Please link to the official project release instead of redistributing modified or repackaged copies of the executable. Do not present the software as an official Garmin or TwoNav product.
+
+4. Reverse engineering
+Do not reverse engineer, decompile or disassemble the software except to the extent such restriction is prohibited by mandatory applicable law.
+
+5. Map and imagery rights
+The software does not grant rights to maps, aerial imagery, city plans, ski maps or other source material. You are responsible for ensuring that you have the necessary rights for any material you convert or use.
+
+6. Third-party trademarks
+Garmin and Garmin product names are trademarks of Garmin Ltd. or its subsidiaries. TwoNav and Land are trademarks or product names of their respective owners. Outdoor Map Converter is an independent project and is not affiliated with, endorsed by, or tested by Garmin Ltd. or TwoNav/CompeGPS.
+
+7. Beta status and warranty
+This software is prerelease software and is provided "as is", without warranty of any kind. Always keep original source files and verify maps before relying on them outdoors.
+
+8. Safety
+Do not rely on a converted map as the sole source of navigation in situations where navigation errors could create a safety risk.
