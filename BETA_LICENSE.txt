@@ -1,5 +1,5 @@
-OUTDOOR MAP CONVERTER - PUBLIC BETA EVALUATION LICENSE
-Version 0.29 Public Beta RC1
+MAP2DEVICE - PUBLIC BETA EVALUATION LICENSE
+Version 0.30 Public Beta
 
 Copyright (c) 2026 Gridovate Motion. All rights reserved.
 
@@ -19,7 +19,7 @@ Do not reverse engineer, decompile or disassemble the software except to the ext
 The software does not grant rights to maps, aerial imagery, city plans, ski maps or other source material. You are responsible for ensuring that you have the necessary rights for any material you convert or use.
 
 6. Third-party trademarks
-Garmin and Garmin product names are trademarks of Garmin Ltd. or its subsidiaries. TwoNav and Land are trademarks or product names of their respective owners. Outdoor Map Converter is an independent project and is not affiliated with, endorsed by, or tested by Garmin Ltd. or TwoNav/CompeGPS.
+Garmin and Garmin product names are trademarks of Garmin Ltd. or its subsidiaries. TwoNav and Land are trademarks or product names of their respective owners. Map2Device by Gridovate Motion is an independent project and is not affiliated with, endorsed by, or tested by Garmin Ltd. or TwoNav/CompeGPS.
 
 7. Beta status and warranty
 This software is prerelease software and is provided "as is", without warranty of any kind. Always keep original source files and verify maps before relying on them outdoors.

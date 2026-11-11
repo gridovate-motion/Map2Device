@@ -1,6 +1,6 @@
 # Device compatibility / Gerätekompatibilität
 
-> Public Beta RC1. "Official" refers to the manufacturer documentation used when the profile was created; it does **not** mean this project is endorsed by the manufacturer.
+> Public Beta. "Official" refers to the manufacturer documentation used when the profile was created; it does **not** mean this project is endorsed by the manufacturer.
 
 | Device | Output | Limit | Evidence | Hardware status |
 |---|---|---:|---|---|

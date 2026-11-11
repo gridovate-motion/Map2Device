@@ -5,7 +5,7 @@ Please copy this template into a GitHub Issue when testing a Public Beta release
 - **Device manufacturer:** Garmin / TwoNav
 - **Device model:**
 - **Firmware version:**
-- **Outdoor Map Converter version:** v0.29 Public Beta RC1
+- **Map2Device version:** v0.30 Public Beta
 - **Input type:** GeoTIFF / AMap-GeoGrid MPH+MPR
 - **Output format:** KMZ / MBTiles
 - **Map detected on device:** Yes / No

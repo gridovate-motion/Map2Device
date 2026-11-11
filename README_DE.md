@@ -1,140 +1,126 @@
-# Outdoor Map Converter v0.29 Public Beta RC1
+# Map2Device
 
-**Eigene Rasterkarten auf Garmin- und TwoNav-Geräten verwenden.**
+**Rasterkarten optimiert für Uhren und Outdoor-GPS-Geräte.**
 
-**Entwickelt von Gridovate Motion**
+**by Gridovate Motion**
 
-Outdoor Map Converter konvertiert georeferenzierte Rasterkarten automatisch in das passende Ausgabeformat für das gewählte Gerät:
+[![Download für Windows](https://img.shields.io/badge/Download_f%C3%BCr_Windows-v0.30_Public_Beta-0B5ED7?style=for-the-badge&logo=windows)](https://github.com/gridovate-motion/Map2Device/releases/download/v0.30-public-beta/Map2Device_v030_Public_Beta.exe)
 
+**Windows 10/11 · 64 Bit · portabel · keine Installation erforderlich**
+
+> **Public Beta:** gültig bis **31.01.2027**. Map2Device ist derzeit nicht digital signiert. Windows SmartScreen kann deshalb eine Warnung wegen eines unbekannten Herausgebers anzeigen. Bitte nur über den offiziellen GitHub-Release von Gridovate Motion herunterladen.
+
+[Release-Seite und Prüfsumme](https://github.com/gridovate-motion/Map2Device/releases/tag/v0.30-public-beta) · **English:** [README.md](README.md)
+
+---
+
+## Was ist Map2Device?
+
+Map2Device bereitet georeferenzierte Rasterkarten für kompatible **Garmin-** und **TwoNav-Geräte** auf. Es wird nicht nur ein Dateiformat gewechselt: Die Karte wird gerätegerecht gekachelt und hinsichtlich Auflösung, Dateigröße und bekannten Geräte-Limits für das gewählte Ziel aufbereitet.
+
+**Map → Device**
+
+Aktuelle Ausgabe:
 - **Garmin** → KMZ / Garmin Custom Maps
 - **TwoNav** → Raster-MBTiles
 
-Zusätzlich kann das Programm ältere **AMap/GeoGrid-PDA-Karten (`.mph` + `.mpr`)** direkt verarbeiten.
+Unterstützte Eingaben:
+- GeoTIFF (`.tif`, `.tiff`) mit eingebetteter Georeferenzierung
+- ältere AMap-/GeoGrid-PDA-Karten (`.mph` + `.mpr`)
 
-> **Public Beta RC1:** gültig bis **31.01.2027**. Diese Vorabversion dient dem Test auf möglichst vielen Geräten.
+## Typische Anwendungen
 
-## Wofür kann ich das verwenden?
-
-Nicht nur klassische Wanderkarten sind möglich. Grundsätzlich eignet sich jede sinnvoll georeferenzierbare Rasterkarte, zum Beispiel:
-
-- topografische Karten und Wanderkarten
-- **Pistenpläne von Skigebieten**, damit die eigene GPS-Position direkt am Handgelenk oder auf dem GPS-Gerät sichtbar ist
-- **Stadtpläne** für Reisen und Sightseeing
+Map2Device kann mit vielen Arten georeferenzierter Rasterkarten verwendet werden, zum Beispiel:
+- Orientierungslaufkarten
+- Wander- und topografische Karten
+- Pistenpläne von Skigebieten
+- Stadt- und Touristenpläne
 - Luftbilder und Orthofotos
 - historische Karten
-- Orientierungslaufkarten
-- Gelände-, Campus-, Freizeitpark- oder Veranstaltungspläne
-- selbst erstellte maßstabsgetreue Karten
+- Campus-, Park-, Veranstaltungs- oder Geländepläne
 
-Wichtig: Ein Rasterbild wird dadurch **nicht routingfähig**. Straßen, Lifte oder Sehenswürdigkeiten werden nicht automatisch zu anklickbaren POIs. Das Gerät zeigt aber die eigene GPS-Position auf der georeferenzierten Karte an.
+Die Karte bleibt eine Rasterkarte. Straßen, Lifte oder POIs werden nicht automatisch routingfähig oder interaktiv. Das Gerät kann jedoch die eigene GPS-Position auf der georeferenzierten Karte darstellen.
 
-## Unterstützte Eingaben
+## Schnellstart
 
-- GeoTIFF (`.tif`, `.tiff`) mit eingebetteter Georeferenzierung
-- AMap/GeoGrid-PDA-Export (`.mph` + `.mpr`)
+1. `Map2Device_v030_Public_Beta.exe` herunterladen.
+2. EXE starten. Eine Installation ist nicht erforderlich.
+3. GeoTIFF oder die `.mph`-Datei einer AMap/GeoGrid-PDA-Karte auswählen.
+4. Zielgerät wählen oder **Manuell / anderes Gerät** verwenden.
+5. Qualität und Ausgabeort wählen.
+6. Garmin-KMZ bzw. TwoNav-MBTiles erstellen.
+7. Fertige Datei auf das Gerät kopieren.
 
-Ein normales JPG/PNG ohne Georeferenzierung muss derzeit zuerst georeferenziert und als GeoTIFF gespeichert werden. Ein eigener Georeferenzierer ist für eine spätere Version geplant, aber **nicht Bestandteil dieser Beta**.
-
-## Installation unter Windows
-
-1. Release-ZIP herunterladen und entpacken.
-2. `Outdoor_Map_Converter_v029_Public_Beta.exe` starten.
-3. Sprache oben rechts auf **Deutsch** oder **English** stellen.
-
-Für diese Windows-Version ist keine Python-Installation erforderlich.
-
-Die Public Beta ist derzeit **nicht digital signiert**. Windows SmartScreen kann deshalb bei einer neu heruntergeladenen EXE eine Warnung anzeigen. Die Datei sollte nur aus dem offiziellen Projekt-Release gestartet werden. Optional kann die SHA-256-Prüfsumme mit `SHA256SUMS.txt` verglichen werden.
-
-## Bedienung
-
-1. **Eingabe auswählen**: GeoTIFF oder `.mph` einer AMap/GeoGrid-PDA-Karte.
-2. Kartenname prüfen oder ändern.
-3. **Zielgerät** aus der alphabetischen Geräteliste wählen.
-4. Qualität wählen. Für sehr große Garmin-Karten kann `Großgebiet (Auto)` sinnvoll sein.
-5. Ausgabeort prüfen oder über **Speichern als …** selbst wählen.
-6. **Garmin-KMZ erstellen** bzw. **TwoNav-MBTiles erstellen** anklicken.
-7. Nach Abschluss die fertige Datei auf das Gerät kopieren.
-
-Ein manuell gewählter Ausgabeordner hat immer Vorrang und wird vom Programm nicht mehr automatisch überschrieben.
+Ein manuell gewählter Ausgabeordner hat immer Vorrang.
 
 ## Garmin
 
-Für Garmin erzeugt das Programm eine Custom-Map-KMZ mit `doc.kml` und nicht-progressiven JPEG-Kacheln. Das Kachellimit wird automatisch anhand des ausgewählten Geräteprofils gesetzt.
+Für Garmin erzeugt Map2Device eine Custom-Map-KMZ mit `doc.kml` und nicht-progressiven JPEG-Kacheln. Bekannte Kachellimits werden automatisch aus dem gewählten Geräteprofil übernommen.
 
-Typischer Zielordner auf dem Gerät:
+Typischer Zielordner:
 
 `Garmin\CustomMaps`
 
-Die Forerunner 970 wurde im Projekt praktisch getestet. Weitere Profile basieren auf Garmin-Dokumentation bzw. klar gekennzeichneten Praxisquellen.
+Die **Forerunner 970** wurde im Projekt auf echter Hardware getestet. Weitere Profile basieren auf Herstellerdokumentation oder klar gekennzeichneten Praxisquellen. Über die manuelle Auswahl können zusätzliche Geräte getestet werden.
 
 ## TwoNav
 
-Für TwoNav wird automatisch eine Raster-MBTiles-Datei erzeugt. Das Garmin-Kachellimit gilt hier nicht.
+Für TwoNav erzeugt Map2Device Raster-MBTiles. Garmin-Kachellimits gelten dort nicht.
 
-Typischer Zielordner auf dem Gerät:
+Typischer Zielordner:
 
 `TwoNavData\Maps`
 
-Der erzeugte MBTiles-Export wurde mit **TwoNav Land unter Windows erfolgreich getestet**. Hardwaretests auf echten TwoNav-Geräten sind ausdrücklich erwünscht.
+Der erzeugte MBTiles-Export wurde in **TwoNav Land unter Windows erfolgreich getestet**. Rückmeldungen von echten TwoNav-Geräten sind ausdrücklich erwünscht.
 
-## Noch keine georeferenzierte Karte? Einfache Lösung mit QGIS
+## Noch keine georeferenzierte Karte?
 
-Für Stadtpläne, Pistenpläne, Luftbilder oder gescannte Karten ist QGIS derzeit der einfachste kostenlose Weg.
+Für JPG/PNG, Scans, Stadtpläne oder Pistenpläne ohne Georeferenzierung ist **QGIS** derzeit der empfohlene kostenlose Weg.
 
-### Kurz-Anleitung
+### Einfache QGIS-Georeferenzierung
+1. **Raster → Georeferenzierer** öffnen.
+2. Bild oder Scan laden.
+3. Mindestens 3–4 gut verteilte Passpunkte setzen.
+4. Den Punkten die passenden realen Koordinaten zuweisen.
+5. GeoTIFF (`.tif`) als Ausgabe wählen.
+6. „Nur World-Datei erzeugen“ nicht aktivieren.
+7. Georeferenzierung starten.
+8. Das fertige GeoTIFF in Map2Device öffnen.
 
-1. QGIS installieren.
-2. **Raster → Georeferenzierer** öffnen.
-3. Bild oder Scan laden.
-4. Mindestens 3 bis 4 gut verteilte, eindeutig erkennbare Passpunkte setzen.
-5. Den Punkten ihre korrekten Koordinaten zuweisen bzw. sie über die QGIS-Karte bestimmen.
-6. Unter **Transformationseinstellungen** als Ausgabedatei ein `.tif` wählen.
-7. **Nur World-Datei erzeugen** nicht aktivieren.
-8. Ein Ziel-KBS festlegen. Der Outdoor Map Converter übernimmt später die nötige Umprojektion.
-9. Georeferenzierung starten.
-10. Das fertige GeoTIFF im Outdoor Map Converter öffnen.
+Gute Passpunkte sind etwa Kreuzungen, Brücken, Gebäude, Liftstationen, Gipfel und andere eindeutig erkennbare Stellen. Stark verzerrte touristische Karten oder Pistenpläne können über die gesamte Fläche weniger genau sein.
 
-### Gute Passpunkte
+## Kompatibilität und Feedback
 
-- Stadtplan: Kreuzungen, Brücken, markante Gebäude
-- Pistenplan: Talstationen, Bergstationen, Gipfel, markante Liftkreuzungen
-- Luftbild: Straßenkreuzungen, Gebäude, Geländepunkte
-- historische Karte: heute noch eindeutig identifizierbare Punkte
+Die aktuelle Geräteliste steht in [COMPATIBILITY.md](COMPATIBILITY.md).
 
-Die Punkte sollten über die ganze Karte verteilt sein. Rein illustrative oder stark perspektivisch verzerrte Pistenpläne können nur eingeschränkt exakt georeferenziert werden.
+Hardwaretests und Bug Reports sind während der Public Beta besonders hilfreich:
 
-## Hardwaretests und Feedback
+[GitHub Issues öffnen](https://github.com/gridovate-motion/Map2Device/issues)
 
-Für die Public Beta sind besonders Tests auf unterschiedlichen Garmin- und TwoNav-Modellen hilfreich. Bitte bei einer Rückmeldung angeben:
+Bitte nach Möglichkeit Gerät, Firmware, Eingabeformat, Kartenerkennung, Positionsgenauigkeit, Zoomverhalten und Darstellungsfehler angeben.
 
-- Hersteller und Modell
-- Firmware-Version
-- Karte erkannt: Ja/Nein
-- Position korrekt: Ja/Nein
-- Zoomen vollständig: Ja/Nein
-- weiße Bereiche oder Darstellungsfehler
-- Geschwindigkeit / Abstürze / sonstige Auffälligkeiten
+## Windows SmartScreen
 
-Siehe auch `HARDWARE_TEST_FEEDBACK.md`.
+Map2Device v0.30 Public Beta ist derzeit **nicht digital signiert**. Windows kann deshalb „Unbekannter Herausgeber“ oder „Der Computer wurde durch Windows geschützt“ anzeigen. Zu jedem offiziellen Release wird eine SHA-256-Prüfsumme bereitgestellt.
 
 ## Beta-Laufzeit
 
-Diese Public Beta ist bis **31.01.2027** freigeschaltet. Danach ist eine aktuelle Version erforderlich. Die zeitliche Begrenzung dient dazu, dass veraltete Testversionen nicht dauerhaft weiterverwendet werden.
+Diese Public Beta ist bis **31.01.2027** freigeschaltet. Danach ist eine aktuelle Version erforderlich.
 
-## Rechtlicher Hinweis
+## Kartenrechte und Marken
+
+Map2Device enthält keine Karten oder Luftbilder. Nutzer sind selbst dafür verantwortlich, nur Material zu verwenden und zu konvertieren, für das die erforderlichen Rechte bestehen.
 
 Garmin und die Bezeichnungen der Garmin-Produkte sind Marken von Garmin Ltd. oder deren Tochtergesellschaften. TwoNav und Land sind Marken bzw. Produktbezeichnungen ihrer jeweiligen Rechteinhaber.
 
-**Outdoor Map Converter wird unabhängig von Gridovate Motion entwickelt und steht in keiner Verbindung zu Garmin Ltd. oder TwoNav/CompeGPS. Das Projekt wird von diesen Unternehmen weder unterstützt noch geprüft.** Die Marken werden ausschließlich verwendet, um die Kompatibilität des Programms zu beschreiben.
-
-Der Nutzer ist selbst dafür verantwortlich, nur Karten, Luftbilder, Pläne oder sonstige Daten zu konvertieren, für die die erforderlichen Nutzungsrechte bestehen. Das Programm enthält keine Karteninhalte von Garmin, TwoNav, BEV oder anderen Kartenanbietern.
+**Map2Device by Gridovate Motion ist ein unabhängiges Projekt und steht in keiner Verbindung zu Garmin Ltd., TwoNav oder CompeGPS. Das Projekt wird von diesen Unternehmen weder unterstützt noch geprüft.** Die Markennamen werden ausschließlich zur Beschreibung der Kompatibilität verwendet.
 
 ## Datenschutz
 
-Die Konvertierung erfolgt lokal auf dem Computer. Diese Version benötigt für die Kartenkonvertierung keine Benutzerkonten und überträgt keine Kartendaten an Garmin, TwoNav oder Gridovate Motion.
+Die Kartenkonvertierung erfolgt lokal auf dem Computer. Diese Version benötigt kein Benutzerkonto und überträgt keine Kartendaten an Garmin, TwoNav oder Gridovate Motion.
 
 ## Versionsstand
 
-v0.29 Public Beta RC1, Oktober 2026  
+**Map2Device v0.30 Public Beta · November 2026**  
 Entwicklung / Herausgeber: **Gridovate Motion**  
 Copyright © 2026 Gridovate Motion. All rights reserved.

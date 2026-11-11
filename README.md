@@ -1,472 +1,126 @@
-# Outdoor Map Converter
+# Map2Device
 
-**Bring your own raster maps to Garmin and TwoNav devices.**
+**Raster maps optimized for watches & outdoor GPS devices.**
 
-Developed by **Gridovate Motion**
+**by Gridovate Motion**
 
-[![Download for Windows](https://img.shields.io/badge/Download_for_Windows-v0.29_Public_Beta-0078D4?style=for-the-badge&logo=windows)](https://github.com/gridovate-motion/Outdoor-Map-Converter/releases/download/v0.29-public-beta/Outdoor_Map_Converter_v029_Public_Beta.exe)
+[![Download for Windows](https://img.shields.io/badge/Download_for_Windows-v0.30_Public_Beta-0B5ED7?style=for-the-badge&logo=windows)](https://github.com/gridovate-motion/Map2Device/releases/download/v0.30-public-beta/Map2Device_v030_Public_Beta.exe)
 
 **Windows 10/11 · 64-bit · Portable · No installation required**
 
-> **Public Beta**
->
-> This beta is valid until **31 January 2027**.
->
-> Outdoor Map Converter is currently distributed as an unsigned application.  
-> Windows SmartScreen may therefore display an **"Unknown publisher"** warning.
->
-> Please download the application only from the official Gridovate Motion GitHub repository.
+> **Public Beta:** valid until **31 January 2027**. Map2Device is currently unsigned, so Windows SmartScreen may display an “Unknown publisher” warning. Download it only from the official Gridovate Motion GitHub release.
 
-[View release notes and SHA-256 checksum](https://github.com/gridovate-motion/Outdoor-Map-Converter/releases/tag/v0.29-public-beta)
-
-**Deutsch:** [README_DE.md](README_DE.md)
+[Release page and checksum](https://github.com/gridovate-motion/Map2Device/releases/tag/v0.30-public-beta) · **Deutsch:** [README_DE.md](README_DE.md)
 
 ---
 
-## What is Outdoor Map Converter?
+## What is Map2Device?
 
-Outdoor Map Converter converts georeferenced raster maps into formats that can be displayed on supported **Garmin** and **TwoNav** devices.
+Map2Device prepares georeferenced raster maps for compatible **Garmin** and **TwoNav** devices. It does more than change a file extension: it creates a device-ready map structure and applies the appropriate tiling, resolution, file-size and device-limit logic for the selected target.
 
-The idea is simple:
+**Map → Device**
 
-**Your map → Outdoor Map Converter → your GPS device**
+Current output:
+- **Garmin** → KMZ / Garmin Custom Maps
+- **TwoNav** → raster MBTiles
 
-You can use your own topographic maps, city maps, ski resort maps, aerial imagery, historical maps or other georeferenced raster maps and carry them directly on your outdoor GPS device or compatible sports watch.
+Supported input:
+- GeoTIFF (`.tif`, `.tiff`) with embedded georeferencing
+- legacy AMap / GeoGrid PDA maps (`.mph` + `.mpr`)
 
-### Supported input
+## Typical use cases
 
-- GeoTIFF (`.tif`, `.tiff`)
-- legacy GeoGrid / Austrian Map PDA files (`.mph` / `.mpr`)
+Map2Device can be used with many kinds of georeferenced raster maps, for example:
+- orienteering maps
+- hiking and topographic maps
+- ski resort piste maps
+- city and tourist maps
+- aerial imagery and orthophotos
+- historical maps
+- campus, park, event or site plans
 
-### Supported output
-
-- **Garmin Custom Maps:** KMZ
-- **TwoNav:** MBTiles
-
-The application automatically prepares the map according to the selected device profile.
-
----
-
-## Why use your own maps?
-
-Outdoor Map Converter is not limited to traditional hiking maps.
-
-Any suitable raster map can potentially be used if it is correctly georeferenced.
-
-### Ski resort maps
-
-A georeferenced piste map can be displayed directly on a compatible Garmin or TwoNav device.
-
-This allows you to see your current GPS position on the familiar ski resort map without having to take out your phone.
-
-### City maps
-
-A detailed city or tourist map can be prepared for your GPS device and used while exploring attractions, streets and districts.
-
-### Aerial imagery
-
-Georeferenced aerial photographs can be useful for:
-
-- outdoor navigation
-- forestry
-- agriculture
-- terrain orientation
-- local exploration
-
-### Historical maps
-
-Old maps can be georeferenced and compared with your current GPS position.
-
-This can be useful for exploring:
-
-- former roads
-- old buildings
-- historical boundaries
-- abandoned infrastructure
-- landscape changes
-
-### Other possible uses
-
-- hiking maps
-- orientation maps
-- cycling maps
-- event areas
-- large parks
-- university campuses
-- camping grounds
-- recreational areas
-- custom local maps
-
----
+The result is still a raster map. Roads, lifts and POIs do not automatically become routable or interactive, but the device can display the user's GPS position on the georeferenced map.
 
 ## Quick start
 
-### 1. Download Outdoor Map Converter
-
-Download the latest Public Beta:
-
-**[Download Outdoor Map Converter v0.29 Public Beta for Windows](https://github.com/gridovate-motion/Outdoor-Map-Converter/releases/download/v0.29-public-beta/Outdoor_Map_Converter_v029_Public_Beta.exe)**
-
-No installation is required.
-
-Simply start:
-
-`Outdoor_Map_Converter_v029_Public_Beta.exe`
-
----
-
-### 2. Select your source map
-
-Choose a supported map file:
-
-- GeoTIFF
-- GeoGrid `.mph`
-- GeoGrid `.mpr`
-
-For GeoGrid maps, keep the corresponding `.mph` and `.mpr` files together.
-
----
-
-### 3. Select manufacturer and device
-
-Choose:
-
-- Garmin
-- TwoNav
-
-and then select your device model.
-
-Outdoor Map Converter uses device-specific profiles where available.
-
-A manual profile is also available for unsupported or experimental devices.
-
----
-
-### 4. Choose an output location
-
-Select where the converted map should be saved.
+1. Download `Map2Device_v030_Public_Beta.exe`.
+2. Start the EXE. No installation is required.
+3. Select a GeoTIFF or the `.mph` file of an AMap/GeoGrid PDA map.
+4. Select the target device or use **Manual / other device**.
+5. Choose quality and output location.
+6. Create the Garmin KMZ or TwoNav MBTiles file.
+7. Copy the result to the device.
 
 A manually selected output folder always has priority.
 
----
+## Garmin
 
-### 5. Create the map
+Garmin output is a Custom Map KMZ with `doc.kml` and non-progressive JPEG tiles. Device-specific tile limits are applied automatically from the selected profile.
 
-Start the conversion.
-
-Outdoor Map Converter automatically creates the appropriate output format:
-
-| Target | Output |
-|---|---|
-| Garmin | `.kmz` |
-| TwoNav | `.mbtiles` |
-
----
-
-### 6. Copy the map to your device
-
-#### Garmin
-
-Garmin Custom Maps are normally copied to:
+Typical destination:
 
 `Garmin\CustomMaps`
 
-The exact location may depend on the device.
+The **Forerunner 970** has been tested on real hardware in this project. Other profiles are based on manufacturer documentation or clearly marked practical sources. A manual profile allows testing additional devices.
 
-#### TwoNav
+## TwoNav
 
-TwoNav maps are normally stored in:
+TwoNav output is raster MBTiles. Garmin tile limits do not apply.
+
+Typical destination:
 
 `TwoNavData\Maps`
 
----
+The generated MBTiles output has been successfully tested in **TwoNav Land on Windows**. Real-device feedback is welcome.
 
-## Do I need a georeferenced map?
+## No georeferenced map yet?
 
-Yes.
+For JPG/PNG scans, city maps, ski maps or other images without georeferencing, **QGIS** is currently the recommended free workflow.
 
-Outdoor Map Converter currently expects the raster map to already contain geographic information.
+### Simple QGIS workflow
+1. Open **Raster → Georeferencer**.
+2. Load the image or scan.
+3. Add at least 3–4 well-distributed control points.
+4. Assign the corresponding real-world coordinates.
+5. Choose GeoTIFF (`.tif`) as output.
+6. Do not select “Create world file only”.
+7. Start georeferencing.
+8. Open the resulting GeoTIFF in Map2Device.
 
-If you only have a normal JPG, PNG, scan, city map or ski resort map, it must first be georeferenced.
+Good control points include road intersections, bridges, buildings, lift stations, peaks and other clearly identifiable features. Highly distorted tourist or piste maps may not align accurately over the entire image.
 
-The easiest free option is **QGIS**.
+## Compatibility and feedback
 
----
+See [COMPATIBILITY.md](COMPATIBILITY.md) for the current profile list.
 
-## Simple georeferencing with QGIS
+Hardware reports and bug reports are especially useful during the Public Beta:
 
-You do not need advanced GIS knowledge for basic maps.
+[Open GitHub Issues](https://github.com/gridovate-motion/Map2Device/issues)
 
-### Basic workflow
-
-1. Install QGIS.
-2. Open the **Georeferencer**.
-3. Load your map image.
-4. Add several clearly identifiable control points.
-5. Assign the corresponding real-world coordinates.
-6. Select **GeoTIFF** as the output format.
-7. Start the georeferencing process.
-8. Open the resulting `.tif` file in Outdoor Map Converter.
-
-### Good control points include
-
-For city maps:
-
-- road intersections
-- prominent buildings
-- bridges
-- squares
-
-For ski resort maps:
-
-- valley stations
-- mountain stations
-- lift intersections
-- prominent peaks
-- clearly identifiable buildings
-
-For aerial imagery:
-
-- road intersections
-- building corners
-- bridges
-- distinctive terrain features
-
-### Recommendation
-
-Use at least **four well-distributed control points** whenever possible.
-
-Avoid placing all control points in the same small area of the map.
-
----
-
-## Important note about illustrated maps
-
-Some tourist maps and ski resort maps are intentionally distorted for better readability.
-
-For example, slopes, mountains or distances may be visually enlarged or moved.
-
-Such maps can still sometimes be georeferenced, but GPS alignment may vary across the map.
-
-Maps that are geographically or proportionally accurate will generally provide better results.
-
----
-
-## Garmin support
-
-Outdoor Map Converter creates Garmin Custom Maps as KMZ files.
-
-Device profiles contain appropriate map limits and settings where known.
-
-### Hardware tested
-
-**Garmin Forerunner 970**
-
-Garmin KMZ export has been successfully tested on real hardware.
-
-Support for additional Garmin devices is based on documented Custom Maps capabilities and device profiles.
-
-Community hardware feedback is welcome.
-
-See:
-
-[COMPATIBILITY.md](COMPATIBILITY.md)
-
----
-
-## TwoNav support
-
-Outdoor Map Converter creates raster MBTiles for TwoNav devices.
-
-### Software tested
-
-TwoNav MBTiles output has been successfully tested in:
-
-**TwoNav Land**
-
-Hardware testing on additional TwoNav GPS devices is especially welcome.
-
-Supported profiles currently include devices from the:
-
-- Aventura family
-- Cross family
-- Roc
-- Terra
-- Trail family
-
-See:
-
-[COMPATIBILITY.md](COMPATIBILITY.md)
-
----
-
-## Hardware testing wanted
-
-One of the main goals of the Public Beta is to verify compatibility with as many devices as possible.
-
-If you own a supported Garmin or TwoNav device, your feedback is very valuable.
-
-Please report:
-
-- manufacturer
-- device model
-- firmware version
-- whether the map is detected
-- whether the map is displayed correctly
-- whether GPS position alignment is correct
-- whether zoom levels work
-- whether missing or white areas appear
-
-Use:
-
-**Issues → New issue → Hardware compatibility report**
-
-[Open Issues](https://github.com/gridovate-motion/Outdoor-Map-Converter/issues)
-
----
-
-## Found a bug?
-
-Please create a GitHub issue using the **Bug report** template.
-
-Useful information includes:
-
-- Outdoor Map Converter version
-- Windows version
-- input format
-- selected device
-- error message
-- steps required to reproduce the problem
-- screenshot if available
-
-[Report a bug](https://github.com/gridovate-motion/Outdoor-Map-Converter/issues)
-
----
+Please include device model, firmware, input format, whether the map is detected, position accuracy, zoom behaviour and any rendering issues.
 
 ## Windows SmartScreen
 
-Outdoor Map Converter v0.29 Public Beta is currently **not digitally signed**.
+Map2Device v0.30 Public Beta is currently **not digitally signed**. Windows may therefore display “Unknown publisher” or “Windows protected your PC”. A SHA-256 checksum is provided with every official release.
 
-Windows may therefore display messages such as:
+## Beta lifetime
 
-- "Unknown publisher"
-- "Windows protected your PC"
+This Public Beta is enabled until **31 January 2027**. After that date, a current build is required.
 
-This does not automatically mean that the application is malicious. Windows displays these warnings for unsigned or low-reputation applications.
+## Map rights and trademarks
 
-For security, download Outdoor Map Converter only from the official Gridovate Motion GitHub release.
+Map2Device does not include maps or imagery. Users are responsible for ensuring that they have the necessary rights to use and convert their source material.
 
-A SHA-256 checksum is provided with every official release.
+Garmin and Garmin product names are trademarks of Garmin Ltd. or its subsidiaries. TwoNav and Land are trademarks or product names of their respective owners.
 
-### Verify the checksum
+**Map2Device by Gridovate Motion is an independent project and is not affiliated with, sponsored by, endorsed by or tested by Garmin Ltd., TwoNav or CompeGPS.** Brand and product names are used solely to describe compatibility.
 
-The official checksum is available in:
+## Privacy
 
-`SHA256SUMS.txt`
+Map conversion is performed locally on the computer. This build does not require a user account and does not upload map data to Garmin, TwoNav or Gridovate Motion.
 
-on the GitHub Release page.
+## Version
 
----
-
-## Public Beta status
-
-Current version:
-
-**v0.29 Public Beta**
-
-Beta expiration:
-
-**31 January 2027**
-
-The beta period is intended to collect:
-
-- device compatibility reports
-- export issues
-- map rendering problems
-- usability feedback
-- ideas for future features
-
-Future versions may change file handling, device profiles or supported formats.
-
----
-
-## Planned ideas
-
-Possible future development includes:
-
-- simplified built-in georeferencing
-- additional device profiles
-- additional raster formats
-- improved compatibility validation
-- easier workflows for city maps and ski resort maps
-- expanded hardware testing
-
-Features are not guaranteed and will depend on testing and feedback.
-
----
-
-## Map rights and copyright
-
-Outdoor Map Converter does **not** include maps, aerial imagery, ski resort maps or other copyrighted map material.
-
-Users are responsible for ensuring that they have the necessary rights to:
-
-- use
-- convert
-- store
-- distribute
-
-their source maps and imagery.
-
-Only convert material that you are legally permitted to use.
-
----
-
-## Trademark notice
-
-Garmin and Garmin product names are trademarks of Garmin Ltd. or its subsidiaries.
-
-TwoNav and Land are trademarks or product names of their respective rights holders.
-
-**Outdoor Map Converter is an independent project developed by Gridovate Motion and is not affiliated with, sponsored by, endorsed by or associated with Garmin Ltd., TwoNav or CompeGPS.**
-
-Brand and product names are used solely to describe compatibility with the respective devices and file formats.
-
----
-
-## License
-
-Outdoor Map Converter v0.29 is distributed under the Public Beta license included in this repository.
-
-See:
-
-[BETA_LICENSE.txt](BETA_LICENSE.txt)
-
-Copyright © 2026 **Gridovate Motion**.  
-All rights reserved.
-
----
-
-## Changelog
-
-See:
-
-[CHANGELOG.md](CHANGELOG.md)
-
----
-
-## Compatibility
-
-Known and planned device compatibility:
-
-[COMPATIBILITY.md](COMPATIBILITY.md)
-
----
-
-## Feedback
-
-Feedback, hardware test results and bug reports are welcome through GitHub Issues.
-
-**Gridovate Motion**
-
-Outdoor Map Converter is currently an independent Public Beta project.
+**Map2Device v0.30 Public Beta · November 2026**  
+Developer / publisher: **Gridovate Motion**  
+Copyright © 2026 Gridovate Motion. All rights reserved.
